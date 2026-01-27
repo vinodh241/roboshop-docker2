@@ -1,8 +1,8 @@
 FROM maven
 
-WORKDIR /opt/server
+WORKDIR  /opt/server
 
-COPY src /opt/server/
+COPY src  /opt/server/src
 COPY pom.xml .
 
 RUN mvn clean package
