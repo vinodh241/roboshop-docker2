@@ -37,6 +37,8 @@ services:
   mysql:
     image: vinod9072/mysql:v1
     container_name: mysql 
+    #environment:
+      #MYSQL_ROOT_PASSWORD: RoboShop@1 
 
   
   shipping:
@@ -52,7 +54,7 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: roboshop
       RABBITMQ_DEFAULT_PASS: roboshop123
-      
+
 
   payment:
     image: vinod9072/payment:v1
