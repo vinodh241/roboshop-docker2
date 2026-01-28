@@ -8,7 +8,7 @@ services:
   mongodb:
     image: vinod9072/mongodb:v1 
     container_name: mongodb
-    
+
   catalogue:
     image: vinod9072/catalogue:v1
     container_name: catalogue
@@ -45,3 +45,9 @@ services:
     depends_on:
       - mysql
       - cart
+  rabbitmq:
+    image: rabbitmq:3
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: roboshop
+      RABBITMQ_DEFAULT_PASS: roboshop123
