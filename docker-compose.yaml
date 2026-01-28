@@ -67,3 +67,14 @@ services:
       - cart
       - user
       - rabbitmq
+  frontend:
+    image: vinod9072/frontend:v1 
+    container_name: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - catalogue
+      - cart
+      - user
+      - shipping
+      - payment
