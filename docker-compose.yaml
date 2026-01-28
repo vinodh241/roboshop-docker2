@@ -8,14 +8,17 @@ services:
   mongodb:
     image: vinod9072/mongodb:v1 
     container_name: mongodb
+    
   catalogue:
     image: vinod9072/catalogue:v1
     container_name: catalogue
     depends_on:
       - mongodb
+
   redis:
     image: redis:7.0
     container_name: redis
+
   
   user:
     image: vinod9072/user:v1
@@ -23,15 +26,18 @@ services:
     depends_on:
       - redis
       - mongodb
+
   cart:
     image: vinod9072/cart:v1
     container_name: cart
     depends_on:
       - catalogue
       - redis
+
   mysql:
     image: vinod9072/mysql:v1
     container_name: mysql 
+
   
   shipping:
     image: vinod9072/shipping:v1
