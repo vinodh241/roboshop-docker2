@@ -10,7 +10,6 @@ volumes:
   redis:
   rabbitmq: 
 
-
 services:
   mongodb:
     image: vinod9072/mongodb:v1 
