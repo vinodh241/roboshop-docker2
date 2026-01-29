@@ -353,7 +353,7 @@ How can you create custom images to your applications?
 # Docker optimization:
   -----------------------
 
-  * 
+  * use minimal , offical images 
 
 
 
@@ -374,7 +374,39 @@ How can you create custom images to your applications?
 
 
 
+# Docker volumes:
+  ----------------
+
+  * un-named/un-managed volumes 
+
+    * if we created dir and managed it then those un-named/un-managed volumes 
+    * if dokcer creates volumes and manages then they are named/managed volumes 
+
+    * volumes should be created to statefull applications (DB)...
+    * dadtabaes store the actual data is host directories, while rendering for user it will shows tab;es or collections 
+
+    * How to create docker volumes?
+      -----------------------------
+
+    * docker volume create <name> 
+
+
+     volumes:
+      <name>
+
+      ex:
+
+      volumes:
+        mongodb: # this is equl to < docker volume create mongodb >
 
 
 
+
+
+
+# stateless vs stateful:
+-------------------------
+
+* where data is important is called stateful applications...
+* app code is stateless ...
 

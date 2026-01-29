@@ -4,10 +4,20 @@ networks:
     name: roboshop
     #external: true # I created a network already using docekr network create roboshop , so external is ture . otjer wise mention the network which you want create same as above 
 
+    # creating volumes for mount the container . Database are statuful so, storing the data into volumes.
+volumes:
+  mongodb:
+  mysql:
+  redis:
+  rabbitmq: 
+
+
 services:
   mongodb:
     image: vinod9072/mongodb:v1 
     container_name: mongodb
+    volumes:
+     - mongodb:/data/db
 
   catalogue:
     image: vinod9072/catalogue:v1
@@ -18,7 +28,8 @@ services:
   redis:
     image: redis:7.0
     container_name: redis
-
+    volumes:
+    - redis:/data
   
   user:
     image: vinod9072/user:v1
@@ -39,7 +50,8 @@ services:
     container_name: mysql 
     #environment:
       #MYSQL_ROOT_PASSWORD: RoboShop@1 
-
+    volumes:
+    - mysql:/var/lib/mysql
   
   shipping:
     image: vinod9072/shipping:v1
@@ -54,7 +66,8 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: roboshop
       RABBITMQ_DEFAULT_PASS: roboshop123
-
+    volumes:
+    - rabbitmq:/var/lib/rabbitmq
 
   payment:
     image: vinod9072/payment:v1
