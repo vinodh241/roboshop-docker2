@@ -3,8 +3,7 @@ networks:
     driver: bridge
     name: roboshop
     #external: true # I created a network already using docekr network create roboshop , so external is ture . otjer wise mention the network which you want create same as above 
-
-    # creating volumes for mount the container . Database are statuful so, storing the data into volumes.
+    #creating volumes for mount the container . Database are statuful so, storing the data into volumes.
 volumes:
   mongodb:
   mysql:
