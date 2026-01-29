@@ -12,7 +12,7 @@
 # stage -1 as builder
 
 
-FROM python:3.9
+FROM python:3.9 AS Builder
 WORKDIR /opt/server
 COPY requirements.txt  .
 COPY *.py  .
