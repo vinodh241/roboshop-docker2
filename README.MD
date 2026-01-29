@@ -2,6 +2,8 @@
 ---------------------------
 
 
+* Terraform provisions infrastructure, Ansible configures systems, * Docker packages applications*, and Kubernetes manages application runtime. Terraform is not suitable for deployments because it is state-driven and not designed for continuous runtime management, scaling, or self-healing. Kubernetes is built exactly for that purpos
+
 * for i in cart catalogue mongodb mysql shipping user payment frontend; do cd $i; docker build -t vinod9072/$i:v1 . ; docker push vinod9072/$i:v1 ; cd ..;done
 
 
@@ -344,11 +346,14 @@ How can you create custom images to your applications?
    -----------------------------------
 
    * docker compose up -d  
-
+   * docker compose down
 
 ------------------------------------------------------------------------------------------------------------------------
 
+# Docker optimization:
+  -----------------------
 
+  * 
 
 
 
