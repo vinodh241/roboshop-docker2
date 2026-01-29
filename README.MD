@@ -353,7 +353,19 @@ How can you create custom images to your applications?
 # Docker optimization:
   -----------------------
 
-  * use minimal , offical images 
+  * use minimal 
+  * offical images 
+  * running as non root containers 
+
+
+# Docker Multisatge builds:
+  ------------------------
+
+  * multi stage builds are like keeping multiple Dockerfiles in a single Dockerfile, one Dockerfile we can use it as builder, another Dockerfile we can use is as final image, we can copy that what ever we want from  builder ti final image
+
+  * this reduces memroy and then unnecessary installations 
+
+  
 
 
 
@@ -401,7 +413,7 @@ How can you create custom images to your applications?
 
 
     * if you remove containers , docker volumes will not be delete,
-    
+
 
 
 
