@@ -23,6 +23,7 @@ FROM  python:3.9.23-alpine3.22
 EXPOSE 8080
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 WORKDIR /opt/server
+RUN  pip3 install -r requirements.txt
 USER roboshop
 COPY --from=builder /opt/server /opt/server/
 CMD ["uwsgi","--ini","payment.ini"]
