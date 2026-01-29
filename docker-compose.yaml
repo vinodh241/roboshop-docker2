@@ -30,6 +30,7 @@ services:
     volumes:
     - redis:/data
   
+
   user:
     image: vinod9072/user:v1
     container_name: user
