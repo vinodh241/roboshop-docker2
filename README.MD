@@ -365,26 +365,6 @@ How can you create custom images to your applications?
 
   * this reduces memroy and then unnecessary installations 
 
-  
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
 
 # Docker volumes:
   ----------------
@@ -422,4 +402,18 @@ How can you create custom images to your applications?
 
 * where data is important is called stateful applications...
 * app code is stateless ...
+
+# Docker best practices:
+------------------------
+
+* use minimal images
+* use iffcial images 
+* run it as non root containers 
+* multi stage builds
+* optimise docker layers 
+* used cutomisednetworks
+* implementing volumes 
+* COPY over ADD 
+
+
 
