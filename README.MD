@@ -400,7 +400,8 @@ How can you create custom images to your applications?
         mongodb: # this is equl to < docker volume create mongodb >
 
 
-
+    * if you remove containers , docker volumes will not be delete,
+    
 
 
 
