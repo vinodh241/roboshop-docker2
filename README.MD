@@ -314,7 +314,7 @@ How can you create custom images to your applications?
    -------
    1. host -- docker uses host networking
    2. bridge -- docker has its own networking 
-   
+
 
 ##########################################################################################################
 
@@ -442,3 +442,8 @@ How can you create custom images to your applications?
 # docker disadvantages:
  -------------------------
 
+1. Auto scaling --  no default auto scaling methods 
+2. Load balancing -- no load balancing components to balance traffic b/w multiple containers
+3. reliablity -- if container crashes , it will not restart on its own ( self healing)
+4. storage -- if docker host crashes we loose data also 
+5. networking -- only bridge mode, if you have multiple docker hosts bridge netwotking will not work
