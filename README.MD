@@ -309,7 +309,12 @@ How can you create custom images to your applications?
      * docker network disconnect bridge catalogue -- disconnect from default network 
 
      * docker network connect <networkname> microservices -- to connect customnetwork 
-
+ 
+   2-types:
+   -------
+   1. host -- docker uses host networking
+   2. bridge -- docker has its own networking 
+   
 
 ##########################################################################################################
 
@@ -415,5 +420,25 @@ How can you create custom images to your applications?
 * implementing volumes 
 * COPY over ADD 
 
+=========================================================================================
 
+# Docker Architecture:
+  --------------------
+
+ *  client -- docekr CLI 
+ *  host   -- where docker is running, docker daemon ( continosuly running)
+ *  repos  -- local repos central repo 
+
+ EX: 
+
+* docker run nginx
+ 
+ * frist it checks the image is in local or not 
+ * if exists, then it will run the container 
+ * if not exisits , pull from hub create container and send O/P to clinet
+ * there are docker volumes and networking we can configure
+
+
+# docker disadvantages:
+ -------------------------
 
