@@ -36,6 +36,7 @@ services:
     depends_on:
       - redis
       - mongodb
+      
 
   cart:
     image: vinod9072/cart:v1
@@ -83,6 +84,7 @@ services:
       - cart
       - user
       - rabbitmq
+
   frontend:
     image: vinod9072/frontend:v1 
     container_name: frontend
