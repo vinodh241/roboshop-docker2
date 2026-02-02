@@ -9,7 +9,7 @@
 
 * Hypervisor
 --------------
-Hypervisor oe Virtual Machine Monitor (VMM), is software that enables a single physical host machine to run 
+Hypervisor or Virtual Machine Monitor (VMM), is software that enables a single physical host machine to run 
 manage and provision multiple isolated virtual machines (VMs).
 
 * VM
@@ -19,6 +19,10 @@ Logically devides physical hardware into multiple servers
 * IMAGE:
 ----------------
 IMAGE =  Base min OS + system packages + Application code and dependencies = ( ex:500MB)
+
+
+
+
 
     VM                      vs               container
 ----------------------------------------------------------------------------
@@ -108,12 +112,12 @@ container is nothing but running instance of image
                       |       |
                  hot-port  container-port
 
- * here host port anything itr our wish but container port should be 80 only , bcz nginx listing port 80 only 
+ * here host port anything its our wish but container port should be 80 only , bcz nginx listing port 80 only 
 
  * docker run -d -p 80:80 nginx:latest 
 
 
-    * we can't use host port agian ( ex: port 80 allocated to nginx container-1 , but we cant use same port for container -2 )
+    * we can't use  same host port agian ( ex: port 80 allocated to nginx container-1 , but we cant use same port for container -2 )
     * when you use docker run command every time one container will create (container port 80 we can use , every time new container created (i;e 0-65568 ports). if you want create another container then use diff host port
 
       * docker run -d -p 81:80 naginx:v1.0 
@@ -188,7 +192,7 @@ How can you create custom images to your applications?
 
  # ADD
   -----
-     * ADD and COPY both are copy the code from local to the container but ADD has two  more advantages  
+     * ADD and COPY both are  copy the code from local to the container but ADD has two  more advantages  
        
        i) It can directly fetch the code from internet
        ii) it can directly untar or unzip into the container 
@@ -295,7 +299,13 @@ How can you create custom images to your applications?
 # Docker Networking
 --------------------
  * When you install docker , docker its self installing network by defalut 
+
   * There are two types of networking 
+
+     2-types:
+   -------
+   1. host -- docker uses host networking
+   2. bridge -- docker has its own networking 
 
    * whenever uses container docker uses bridge network
    * Docker default bridge network conn't communicate containers , so docker always suggest to create custom bridge network
@@ -310,12 +320,6 @@ How can you create custom images to your applications?
 
      * docker network connect <networkname> microservices -- to connect customnetwork 
  
-   2-types:
-   -------
-   1. host -- docker uses host networking
-   2. bridge -- docker has its own networking 
-
-
 ##########################################################################################################
 
 # Docker Compose
@@ -332,7 +336,7 @@ How can you create custom images to your applications?
 
     external: true 
     
-    * I created a network already using docekr network create roboshop , so external is ture . otjer wise mention the network which you want create same as above
+    * I created a network already using docekr network create roboshop , so external is ture . other wise mention the network which you want create same as above
 
     * services:
        mongodb:
@@ -366,7 +370,7 @@ How can you create custom images to your applications?
 # Docker Multisatge builds:
   ------------------------
 
-  * multi stage builds are like keeping multiple Dockerfiles in a single Dockerfile, one Dockerfile we can use it as builder, another Dockerfile we can use is as final image, we can copy that what ever we want from  builder ti final image
+  * multi stage builds are like keeping multiple Dockerfiles in a single Dockerfile, one Dockerfile we can use it as builder, another Dockerfile we can use is as final image, we can copy that what ever we want from  builder it is final image
 
   * this reduces memroy and then unnecessary installations 
 
@@ -380,7 +384,7 @@ How can you create custom images to your applications?
     * if dokcer creates volumes and manages then they are named/managed volumes 
 
     * volumes should be created to statefull applications (DB)...
-    * dadtabaes store the actual data is host directories, while rendering for user it will shows tab;es or collections 
+    * dadtabaes store the actual data is host directories, while rendering for user it will shows tables or collections 
 
     * How to create docker volumes?
       -----------------------------
@@ -435,7 +439,7 @@ How can you create custom images to your applications?
  
  * frist it checks the image is in local or not 
  * if exists, then it will run the container 
- * if not exisits , pull from hub create container and send O/P to clinet
+ * if not exisits , pull from hub and create container and send O/P to clinet
  * there are docker volumes and networking we can configure
 
 
